@@ -11,6 +11,14 @@ public class User {
     private String city;
     private String zipCode;
 
+
+    public User(String name, String lastName, String city, String zipCode) {
+        this.name = name;
+        this.lastName = lastName;
+        this.city = city;
+        this.zipCode = zipCode;
+    }
+
     public String getName() {
         return name;
     }

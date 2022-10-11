@@ -1,8 +1,12 @@
 package org.registration;
 
 import java.io.UnsupportedEncodingException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class PeselValidation {
+
+    private static final Logger log = LogManager.getLogger(PeselValidation.class);
 
     private static boolean valid = false;
 
@@ -10,6 +14,7 @@ public class PeselValidation {
     public static boolean isValid(String pesel) throws UnsupportedEncodingException {
         if(pesel.length() != 11){
             valid = false;
+            log.warn("Pesel {} is not valid", pesel);
             return false;
         }
         else {
@@ -19,10 +24,12 @@ public class PeselValidation {
             }
             if (checkSum(peselBytes) && checkMonth(peselBytes) && checkDay(peselBytes)) {
                 valid = true;
+                log.trace("Pesel {} is valid", pesel);
                 return true;
             }
             else {
                 valid = false;
+                log.warn("Pesel {} is not valid", pesel);
                 return false;
             }
         }

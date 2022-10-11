@@ -19,12 +19,18 @@ public class JdbcConnectionTest {
 
     @Test
     public void insertNewUser() throws UnsupportedEncodingException {
-        User user1 = new User();
-        user1.setName("John");
-        user1.setLastName("Smith");
-        user1.setCity("Lodz");
-        user1.setZipCode("90-423");
+        User user1 = new User("John","Smith","Lodz","90-423");
         user1.setEmail("john@email.com");
+        user1.setPesel("55092056374");
+
+        SaveUserToDatabase.addUser(user1);
+
+    }
+
+    @Test
+    public void sendEmail() throws UnsupportedEncodingException {
+        User user1 = new User("Maria","Costa","Lodz","90-423");
+        user1.setEmail("maria@email.com");
         user1.setPesel("55092056374");
 
         SaveUserToDatabase.addUser(user1);
