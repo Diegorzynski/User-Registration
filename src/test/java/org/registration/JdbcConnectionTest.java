@@ -31,7 +31,7 @@ public class JdbcConnectionTest {
     public void sendEmail() throws UnsupportedEncodingException {
         User user1 = new User("Maria","Costa","Lodz","90-423");
         user1.setEmail("maria@email.com");
-        user1.setPesel("55092056374");
+        user1.setPesel("68091094573");
 
         SaveUserToDatabase.addUser(user1);
 

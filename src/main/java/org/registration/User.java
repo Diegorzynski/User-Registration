@@ -43,26 +43,11 @@ public class User {
         return zipCode;
     }
 
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public void setZipCode(String zipCode) {
-        this.zipCode = zipCode;
-    }
 
     public void setEmail(String email) {
         if(EmailValidation.isValid(email)){
             this.email = email;
         }
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public void setPesel(String pesel) throws UnsupportedEncodingException {
